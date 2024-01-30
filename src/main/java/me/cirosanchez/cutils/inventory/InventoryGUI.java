@@ -1,6 +1,5 @@
 package me.cirosanchez.cutils.inventory;
 
-import lombok.Getter;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
@@ -11,7 +10,10 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public abstract class InventoryGUI implements InventoryHandler {
-    @Getter
+    public Inventory getInventory() {
+        return inventory;
+    }
+
     private final Inventory inventory;
     private final Map<Integer, InventoryButton> buttons = new HashMap<>();
 
